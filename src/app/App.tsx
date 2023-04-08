@@ -1,11 +1,10 @@
-import React from 'react';
 import './App.css';
-import {StockTable} from '../feature/stock/StockTable/StockTable';
+import {Stock} from '../feature/stock/Stock';
 
 export const App = () => {
   return (
     <div className="App">
-      <StockTable/>
+      <Stock/>
     </div>
   );
 }
