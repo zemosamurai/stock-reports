@@ -1,0 +1,58 @@
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.table {
+  width: 100%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  text-align: center;
+  padding: 15px;
+}
+
+.table th{
+  background-color: #282c34;
+  color: white;
+}
+
+.table tr:hover {
+  background-color: #e5e5e5;
+}
+
+.table td:not(:last-child) {
+  border-right: 1px solid #d3d3d3;
+}
+
+.decline{
+  color: red;
+  font-weight: 600;
+}
+
+.increase {
+  color: green;
+  font-weight: 600;
+}
+
+.previous {
+  color: #0a60ff;
+  font-weight: 600;
+}
+.table tbody {
+  position: relative;
+}
+
+.table tbody .loader_row:hover {
+  background-color: inherit;
+}
+
+.table tbody .loader {
+  padding: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
