@@ -17,7 +17,7 @@ export const appReducer = (state = initialState, action: ActionsType): InitialSt
 export const setLoadingAC = (isLoading: boolean) => ({type: 'SET_LOADING', payload: isLoading} as const);
 export const setErrorAC = (error: string | null) => ({type: 'SET_ERROR', payload: error} as const);
 
-type InitialStateType = typeof initialState
+export type InitialStateType = typeof initialState
 type ActionsType =
   | ReturnType<typeof setLoadingAC>
   | ReturnType<typeof setErrorAC>

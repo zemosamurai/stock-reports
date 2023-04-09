@@ -20,7 +20,7 @@ export const StockTable = () => {
       data={currentStocks}
       bordered
       loading={isLoading}>
-        <Column width={50} align='left'>
+        <Column width={50} align='center'>
           <HeaderCell>№</HeaderCell>
           <Cell dataKey='id'/>
         </Column>

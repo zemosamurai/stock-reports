@@ -49,7 +49,7 @@ export const setPageCountAC = (pageCount: number) => ({
   payload: pageCount
 } as const);
 
-type InitialStateType = typeof initialState
+export type InitialStateType = typeof initialState
 type ActionsType =
   | ReturnType<typeof setStocksRequestAC>
   | ReturnType<typeof setPageCountAC>
