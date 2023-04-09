@@ -1,10 +1,10 @@
-import {instance} from '../../common/instance/instance';
+import {instance} from 'common/instance/instance';
 
 const MY_IEX_API_KEY = 'pk_1eb501d7a94449c98642a5cc333ade40'
 
 export const stockAPI = {
   fetchStocks(page: number) {
-    return instance.get(`stable/stock/market/list/mostactive`,{
+    return instance.get(`stable/stock/market/list/mostactive`, {
       params: {
         token: MY_IEX_API_KEY,
         displayPercent: true,

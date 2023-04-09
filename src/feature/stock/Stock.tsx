@@ -1,7 +1,10 @@
-import {StockTable} from './StockTable/StockTable';
 import {useEffect} from 'react';
+import {useAppDispatch, useAppSelector} from 'app/store';
 import {fetchStocksTC} from './stockReducer';
-import {useAppDispatch, useAppSelector} from '../../app/store';
+import {StockTable} from './StockTable/StockTable';
+import {StockPagination} from './StockPagination/StockPagination';
+import s from './stock.module.css'
+import {ErrorSnackbar} from 'common/components/ErrorSnackbar/ErrorSnackbar';
 
 export const Stock = () => {
   const pageCount = useAppSelector(state => state.stocks.pageCount)
@@ -12,8 +15,10 @@ export const Stock = () => {
   }, [pageCount])
 
   return (
-    <>
+    <div className={s.container}>
       <StockTable/>
-    </>
+      <StockPagination/>
+      <ErrorSnackbar/>
+    </div>
   )
 }

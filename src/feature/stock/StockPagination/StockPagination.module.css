@@ -1,0 +1,9 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.wrapper {
+  display: flex;
+  column-gap: 30px;
+}
