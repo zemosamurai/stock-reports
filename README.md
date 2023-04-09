@@ -1,7 +1,7 @@
 ## Файловая структура
 
 ```
-тname-project
+structure
 ├── dist
 ├── gulp
 ├── src
@@ -30,5 +30,3 @@
 ├── gulpfile.js
 ├── package.json
 └── README.md
-
-```
