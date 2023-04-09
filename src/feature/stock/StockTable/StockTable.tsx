@@ -14,13 +14,12 @@ export const StockTable = () => {
   const colorChanges = (change: number) => change > 0 ? s.increase : change < 0 ? s.decline : s.previous
 
   return (
-      <Table
-        height={500}
-        width={1400}
-        data={currentStocks}
-        bordered
-        loading={isLoading}>
-
+    <Table
+      height={500}
+      width={1400}
+      data={currentStocks}
+      bordered
+      loading={isLoading}>
         <Column width={50} align='left'>
           <HeaderCell>№</HeaderCell>
           <Cell dataKey='id'/>
@@ -85,6 +84,6 @@ export const StockTable = () => {
           <HeaderCell>Latest Time</HeaderCell>
           <Cell dataKey='latestTime'/>
         </Column>
-      </Table>
+    </Table>
   );
 };
