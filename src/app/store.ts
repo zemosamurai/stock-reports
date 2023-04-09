@@ -1,9 +1,9 @@
 import {AnyAction, combineReducers} from 'redux';
-import { stockReducer } from '../feature/stock/stockReducer';
+import { stockReducer } from 'feature/stock/stockReducer';
 import { legacy_createStore as createStore, applyMiddleware } from 'redux';
 import thunkMiddleware, {ThunkDispatch} from 'redux-thunk';
 import {TypedUseSelectorHook, useDispatch, useSelector} from 'react-redux';
-import {appReducer} from '../app/appReducer';
+import {appReducer} from 'app/appReducer';
 
 export const rootReducer = combineReducers({
   app: appReducer,

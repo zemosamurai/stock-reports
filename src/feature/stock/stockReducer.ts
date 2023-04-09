@@ -1,13 +1,13 @@
 import {Dispatch} from 'redux';
 import {fetchStocksType, stockAPI} from './stockAPI';
-import {RootStateType} from '../../app/store';
-import {setLoadingAC} from '../../app/appReducer';
+import {RootStateType} from 'app/store';
+import {setErrorAC, setLoadingAC} from 'app/appReducer';
+import axios from 'axios';
 
 export enum page {
   size = 10,
   minimalSize = 10
 }
-
 const initialState = {
   stocksData: [] as fetchStocksType[],
   pageCount: 10
@@ -16,7 +16,7 @@ const initialState = {
 export const stockReducer = (state = initialState, action: ActionsType): InitialStateType => {
   switch (action.type) {
     case 'SET_STOCKS_REQUEST':
-      return {...state, stocksData: action.payload};
+      return {...state, stocksData: action.payload.map((el,i) => ({...el, id: i + 1}))};
     case 'SET_PAGE_COUNT':
       return {...state, pageCount: action.payload}
     default:
@@ -31,7 +31,10 @@ export const fetchStocksTC = () => async (dispatch: Dispatch, getState: () => Ro
     const res = await stockAPI.fetchStocks(pageCount)
     dispatch(setStocksRequestAC(res.data))
   } catch (e) {
-
+    if (axios.isAxiosError(e)) {
+      const errorMessage = e.message ? e.message : 'Some error'
+      dispatch(setErrorAC(errorMessage))
+    }
   } finally {
     dispatch(setLoadingAC(false))
   }
